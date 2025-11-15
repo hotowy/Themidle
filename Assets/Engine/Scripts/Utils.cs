@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class Utils
+public static class Utils
 {
-    public class Header
+    public static class Header
     {
         public const string Separator = " \r \r \r ";
         public const string Debug = prefix + "DEBUG" + suffix;
@@ -21,33 +21,31 @@ public class Utils
     /// Finds the closest component of type T within a given radius and layer mask.
     /// </summary>
     /// <typeparam name="T">The component type to search for (e.g. Enemy, Collectible, etc.)</typeparam>
-    /// <param name="origin">The position to search from.</param>
-    /// <param name="range">The search radius.</param>
-    /// <param name="layerMask">Which layers to include in the search.</param>
+    /// <param name="center">The position to search from.</param>
+    /// <param name="circleRange">The search radius.</param>
+    /// <param name="colliderLayerMask">Which layers to include in the search.</param>
     /// <returns>The closest component of type T, or null if none found.</returns>
-    public static T GetClosest<T>(Vector2 origin, float range, LayerMask layerMask) where T : Component
+    public static T GetClosest<T>(Vector2 center, float circleRange, LayerMask colliderLayerMask) where T : Component
+    // TODO : Could be speed up?
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(origin, range, layerMask);
+        Collider2D[] overlapCircleAllCollidersHits = Physics2D.OverlapCircleAll(center, circleRange, colliderLayerMask);
 
-        float minDist = Mathf.Infinity;
-        T closest = null;
+        float closestDistance = Mathf.Infinity;
+        T closestHit = null;
 
-        foreach (var hit in hits)
+        foreach (var hit in overlapCircleAllCollidersHits)
         {
-            T comp = hit.GetComponent<T>();
-            if (comp == null)
+            if (hit.TryGetComponent(out T targetTypeHit))
             {
-                continue;
-            }
-
-            float dist = Vector2.SqrMagnitude((Vector2)hit.transform.position - origin);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                closest = comp;
+                float dist = Vector2.SqrMagnitude((Vector2)hit.transform.position - center);
+                if (dist < closestDistance)
+                {
+                    closestDistance = dist;
+                    closestHit = targetTypeHit;
+                }
             }
         }
 
-        return closest;
+        return closestHit;
     }
 }
