@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddca991323384fd4dad9a01a7d68a73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  dirToTarget1: {x: 0, y: 0}
   collisionRaycastSpreadAxisX: 0.3
   collisionRaycastDistance: 0.5
   avoidDirectionMoveMultiplier: 0.5

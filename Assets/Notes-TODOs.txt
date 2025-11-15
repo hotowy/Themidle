@@ -1,0 +1,19 @@
+﻿MINIMAL {
+    - KILL REWARD SYSTEM - (drop chance GOLD - no gold mines : ? what drop from big monster ? )
+    - The defense system ( start 0/1 archer, buy more [for GOLD] = 1 BUTTON -> fill towers up to 2 from center to the edges)
+    - GAME OVER SYSTEM (castle gate HP, any animation, sum of stats)
+    - Upgrades for the defense system [for resources] (SAME UI AS UPGRADES FOR PASSIVES?) (TIER ??) (AMOUNT PER )
+    - Waves System (scaling of spawners by configurable totalMonstersToSpawn& durationOfWave)
+    - "PICK FROM 3" Wave Reward System - (modifiers, passives?? like LOW % CHANCE 1% for an additional archer arrow)
+    - MAIN MENU (or restart and quit on the same scene at least)
+}
+
+===== CORE FIXES {
+    - BLOOD EFFECT DIRECTION
+    - ENEMY 2dCOLLIDER PERFORMANCE ISSUE
+}
+
+GODLIKE {
+    - PASSIVE TREE SYSTEM (cards/buttons giving both + & - (+2 wood/sec +10% enemy wave size))
+    - PRESTIGE SYSTEM
+}
