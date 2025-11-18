@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        //AnimateDeath();
+        AnimateDeath();
         DropAward();
         Destroy(this.gameObject);
     }

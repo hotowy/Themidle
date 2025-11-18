@@ -15,6 +15,7 @@ public class DropAnimation : MonoBehaviour
     public static void InstantiateAnimation(ResourceType resourceType, int amount, Vector2 pointOfDeath)
     {
         var obj = new GameObject("DropAnimation");
+        obj.transform.position = pointOfDeath + new Vector2(0, yAxisOffset);
         
         DropAnimation dropAnimation = obj.AddComponent<DropAnimation>();
         dropAnimation.sr = obj.AddComponent<SpriteRenderer>();
@@ -22,10 +23,10 @@ public class DropAnimation : MonoBehaviour
         dropAnimation.sr.sortingOrder = 10;
         dropAnimation.transform.localScale = new Vector2(0.08f, 0.08f);
         
-        //TMP_Text tmpText = obj.AddComponent<TMP_Text>();
-        //tmpText.text = amount.ToString();
-        
-        Instantiate(obj, pointOfDeath + new Vector2(0, yAxisOffset), Quaternion.identity);
+        // var tmpText = obj.AddComponent<TMPro.TextMeshPro>();
+        // tmpText.text = "x" + amount;
+        // tmpText.fontSize = 3f;
+        // tmpText.sortingOrder = 20;
     }
 
     void Start()
@@ -35,12 +36,8 @@ public class DropAnimation : MonoBehaviour
 
     void Update()
     {
-        // ruch w górę
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-        transform.localScale = transform.localScale - new Vector3(0.08f, 0.08f) * Time.deltaTime;
-
-        // zanik (alpha maleje)
-        //sr.color -= fadeSpeed * Time.deltaTime;
-        //sr.color = color;
+        //TODO magic numbers
+        transform.localScale -= new Vector3(0.08f, 0.08f) * Time.deltaTime;
     }
 }
