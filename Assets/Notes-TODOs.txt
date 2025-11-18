@@ -1,5 +1,5 @@
 ﻿MINIMAL {
-    - KILL REWARD SYSTEM - (drop chance GOLD - no gold mines : ? what drop from big monster ? )
+    + KILL REWARD SYSTEM - (drop chance GOLD - no gold mines : ? what drop from big monster ? )
     - The defense system ( start 0/1 archer, buy more [for GOLD] = 1 BUTTON -> fill towers up to 2 from center to the edges)
     - GAME OVER SYSTEM (castle gate HP, any animation, sum of stats)
     - Upgrades for the defense system [for resources] (SAME UI AS UPGRADES FOR PASSIVES?) (TIER ??) (AMOUNT PER )

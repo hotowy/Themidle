@@ -21,6 +21,7 @@ public class ResourceType : ScriptableObject
         this.amount = this.initialAmount;
         this.amountPerSecond = 0;
         this.Uis = uis;
+        Destroy(this, 10f);
     }
 
     public void ProcessAmountPerSecond(int updatesPerSecond)

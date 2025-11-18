@@ -50,6 +50,10 @@ MonoBehaviour:
   collisionRaycastSpreadAxisX: 0.3
   collisionRaycastDistance: 0.5
   avoidDirectionMoveMultiplier: 0.5
+  dropType: {fileID: 11400000, guid: ca451b80164480f4fbe7c008b309a38f, type: 2}
+  dropAmount: 1
+  dropChance: 1
+  deathParticleAnimation: {fileID: 4947748744386201399, guid: f89461c65f4dd504fa6bd1ba245c139b, type: 3}
   hp: 2
   damage: 1
   moveForce: 0.4

@@ -14,8 +14,21 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     [FormerlySerializedAs("avoidDirectionMultiplier")] 
     private float avoidDirectionMoveMultiplier = 0.7f;
+
+    [Header(Utils.Header.Separator)] 
     
-    [Header(Utils.Header.Separator)]
+    [SerializeField]
+    private ResourceType dropType;
+
+    [SerializeField] 
+    [Range(0, 10)] 
+    private int dropAmount = 1;
+    
+    [SerializeField]
+    private float dropChance = 0.1f;
+    
+    [SerializeField] 
+    private ParticleSystem deathParticleAnimation;
     
     
     public int hp = 2;
@@ -59,13 +72,37 @@ public class Enemy : MonoBehaviour
 
     public void Hurt(int damageDealt)
     {
-        if (hp < damageDealt)
+        if (hp <= damageDealt)
         {
-            Destroy(this.gameObject);
+            Die();
         }
         else
         {
             hp -= damageDealt;
+        }
+    }
+
+    private void Die()
+    {
+        //AnimateDeath();
+        DropAward();
+        Destroy(this.gameObject);
+    }
+
+    private void AnimateDeath()
+    {
+        if (deathParticleAnimation)
+        {
+            Instantiate(deathParticleAnimation, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void DropAward()
+    {
+        if (dropType && dropAmount > 0 && UnityEngine.Random.Range(0f, 1f) <= dropChance)
+        {
+            DropAnimation.InstantiateAnimation(dropType, dropAmount, rb.position);
+            dropType.amount += dropAmount;
         }
     }
 

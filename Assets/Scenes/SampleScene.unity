@@ -26515,7 +26515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5007381932405964242, guid: 0bbd79132ca484d4e8e4661efdc01ff9, type: 3}
       propertyPath: swarmerInterval
-      value: 0.05
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5007381932405964242, guid: 0bbd79132ca484d4e8e4661efdc01ff9, type: 3}
       propertyPath: bigSwarmerPrefab
@@ -26843,11 +26843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3455629462692043710, guid: 53559dec37248c24984182fc15481124, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.068
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 3455629462692043710, guid: 53559dec37248c24984182fc15481124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.442
+      value: 1.774
       objectReference: {fileID: 0}
     - target: {fileID: 3455629462692043710, guid: 53559dec37248c24984182fc15481124, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29707,7 +29707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5007381932405964242, guid: 0bbd79132ca484d4e8e4661efdc01ff9, type: 3}
       propertyPath: swarmerInterval
-      value: 0.05
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5007381932405964242, guid: 0bbd79132ca484d4e8e4661efdc01ff9, type: 3}
       propertyPath: bigSwarmerPrefab
